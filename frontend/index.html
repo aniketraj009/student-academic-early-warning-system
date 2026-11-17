@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPU Academic Early Warning System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎓 LPU EWS</h2>
+            <p>Academic Early Warning</p>
+        </div>
+
+        <nav class="navigation">
+            <a href="#" class="active">🏠 Dashboard</a>
+            <a href="#">👨‍🎓 Student Prediction</a>
+            <a href="#">📊 Data Overview</a>
+            <a href="#">📈 Visualizations</a>
+            <a href="#">🎯 Model Performance</a>
+            <a href="#">🔍 Feature Analysis</a>
+            <a href="#">ℹ️ About Project</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Academic Monitoring System</p>
+            <span>Version 1.0</span>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Student Academic Early-Warning System</p>
+            </div>
+
+            <div class="profile">
+                <span>Faculty Dashboard</span>
+                <div class="avatar">F</div>
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <section class="dashboard-section">
+
+            <div class="welcome">
+                <h2>Welcome to Academic Monitoring</h2>
+                <p>Monitor student performance and identify academic risks.</p>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <p>Total Students</p>
+                    <h2>395</h2>
+                    <span>Dataset Records</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>At-Risk Students</p>
+                    <h2>130</h2>
+                    <span>32.91% of students</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Not At Risk</p>
+                    <h2>265</h2>
+                    <span>67.09% of students</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Model Recall</p>
+                    <h2>84.62%</h2>
+                    <span>Random Forest</span>
+                </div>
+
+            </div>
+
+            <div class="content-grid">
+
+                <div class="content-card">
+                    <h3>Academic Risk Distribution</h3>
+                    <div id="risk-chart"></div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Model Performance</h3>
+                    <div id="performance-chart"></div>
+                </div>
+
+            </div>
+
+            <div class="content-card recent-activity">
+                <h3>System Overview</h3>
+
+                <p>
+                    This platform uses Machine Learning to identify
+                    students who may be at academic risk.
+                </p>
+
+                <p>
+                    Faculty can use predictions to support
+                    early intervention and academic improvement.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Student Prediction -->
+        <section class="prediction-section content-card"
+                 id="prediction-section"
+                 style="display:none;">
+
+            <h2>🎓 Student Academic Risk Prediction</h2>
+
+            <p>
+                Enter basic academic details to estimate student risk.
+            </p>
+
+            <form id="predictionForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input
+                            type="text"
+                            name="student_name"
+                            placeholder="Enter student name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input
+                            type="number"
+                            name="age"
+                            min="15"
+                            max="22"
+                            placeholder="Enter age"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Academic Percentage</label>
+                        <input
+                            type="number"
+                            name="percentage"
+                            min="0"
+                            max="100"
+                            step="0.01"
+                            placeholder="e.g. 75"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Attendance Percentage</label>
+                        <input
+                            type="number"
+                            name="attendance"
+                            min="0"
+                            max="100"
+                            step="0.01"
+                            placeholder="e.g. 85"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" class="predict-btn">
+                    Predict Academic Risk
+                </button>
+
+            </form>
+
+            <div id="prediction-result"></div>
+
+        </section>
+
+        <footer>
+            LPU Student Academic Early-Warning System |
+            Machine Learning Prototype
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
